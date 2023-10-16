@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dutch Auction</title>
+    <link rel="stylesheet" href="src/main.css">
+  </head>
+  <body>
+    <div id="app">
+
+      <div id="loginSection">
+        <button id="login">Log in</button>
+      </div>
+
+      <div id="header" style="display:none;">
+        <ul id="menu">
+          <li id="disconnect">
+            Disconnect
+          </li>
+          <li id="profile">
+            Profile
+          </li>
+          <li id="liListItem">
+            List Items
+          </li>
+          <li id="liSecretBids">
+            Secret Bids
+          </li>
+          <li id="liBids">
+            Bids
+          </li>
+          <li id="auctionedItems">
+            Auctioned Items
+          </li>
+        </ul>
+      </div>
+
+      <div id="profileSection" style="display:none;">
+        <label for="address"><b>Account</b></label>
+        <w3m-button>Connection</w3m-button>
+        <br>
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <button id="submit" class="registerbtn">Save</button>
+
+      </div>
+
+      <div id="listItem" style="display:none;">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="itemName" required>
+
+        <label for="description"><b>Description</b></label>
+        <input type="text" placeholder="Enter Description" name="description" id="description" required>
+
+        <label for="reservePrice"><b>Reserve Price</b></label>
+        <input type="number" placeholder="Enter Reserve price" name="reservePrice" id="reservePrice" required>
+
+        <label for="itemAddress"><b>Item Address</b></label>
+        <input type="text" placeholder="Enter Address" name="itemAddress" id="itemAddress" required>
+
+        <label for="discountPrice"><b>Discount Price</b></label>
+        <input type="number" placeholder="Enter Discount price" name="discountPrice" id="discountPrice" required>
+
+        <label for="discountInterval"><b>Discount Interval</b></label>
+        <input type="number" placeholder="Enter Discount Interval" name="discountInterval" id="discountInterval" required>
+
+        <button id="submitList" class="registerbtn">List Item</button>
+        <label id="listError" style="color:red;"></label>
+      </div>
+
+      <div id="secretItems" class="list" style="display:none;">
+        <h3>Items open for secret bids</h3>
+        <ul id="itemList">
+        </ul>
+        <div id="myPopup" class="popup">
+          <div class="popup-content">
+              <h2 style="color:green;">
+                    Place Bid
+                </h2>
+                <input type="text" name="bidAddress" id="bidAddress" required disabled>
+        <input type="number" placeholder="Enter Amount" name="number" id="amount" required>
+
+        <button id="bidSubmit" class="registerbtn">Submit</button>
+        <hr>
+        <button id="close" class="registerbtn">Close</button>
+        <label id="bidError" style="color:red;"></label>
+          </div>
+      </div>
+      </div>
+
+      <div id="bids" class="list" style="display:none;">
+        <h3>Items open for bids</h3>
+        <ul id="bidList">
+        </ul>
+        <div id="bidPopup" class="popup">
+          <div class="popup-content">
+              <h2 style="color:green;">
+                    Place Bid
+                </h2>
+                <input type="text" name="bidAddress" id="bidAddress1" required disabled>
+        <input type="number" placeholder="Enter Amount" name="number" id="amount1" required>
+
+        <button id="bidSubmit1" class="registerbtn">Submit</button>
+        <hr>
+        <button id="close1" class="registerbtn">Close</button>
+        <label id="bidError1" style="color:red;"></label>
+          </div>
+      </div>
+      </div>
+
+      <div id="allItemsSection" class="list" style="display:none;">
+        <h3>Items</h3>
+        <ul id="allItems">
+        </ul>
+        <div id="bidPopup" class="popup">
+          <div class="popup-content">
+              <h2 style="color:green;">
+                    Place Bid
+                </h2>
+                <input type="text" name="bidAddress" id="bidAddress1" required disabled>
+        <input type="number" placeholder="Enter Amount" name="number" id="amount1" required>
+
+        <button id="bidSubmit1" class="registerbtn">Submit</button>
+        <hr>
+        <button id="close1" class="registerbtn">Close</button>
+        <label id="bidError1" style="color:red;"></label>
+          </div>
+      </div>
+      </div>
+      <!-- <div style="display:none;">
+        <button id="login">Log in</button>
+      <button id="open-connect-modal">Open Modal</button>
+      <button id="open-network-modal">Open Networks</button>
+      </div> -->
+      
+      <!-- <w3m-button>Connection</w3m-button>
+      <w3m-network-button>Networks</w3m-network-button> -->
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
