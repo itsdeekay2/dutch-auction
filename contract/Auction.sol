@@ -120,13 +120,12 @@ contract AuctionContract {
         return items;
     }
 
-    function getPrice(address addr) public returns (uint) {
+    function getPrice(address addr) public view returns (uint) {
         Auction storage auction = auctionItems[addr];
         uint timeElapsed = block.timestamp - auction.item.startsAt;
         uint timeUnits = uint(timeElapsed) / uint(auction.item.discountInterval);
         uint discount = auction.item.discountPrice * timeUnits;
         if(discount>auction.startPrice){
-            auctionItems[addr].status = 3;
             return 0;
         }
         return auction.startPrice - discount;
